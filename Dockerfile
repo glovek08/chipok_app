@@ -1,8 +1,9 @@
 # Use the official Python image
 FROM python:3.11-slim-bullseye
 
-# Install security updates and remove unnecessary files
+# Install git and system updates
 RUN apt-get update && \
+  apt-get install -y git && \
   apt-get upgrade -y && \
   apt-get autoremove -y && \
   apt-get clean && \
@@ -11,6 +12,10 @@ RUN apt-get update && \
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=development
+# Enables debug mode
+
 
 # Set working directory
 WORKDIR /app
