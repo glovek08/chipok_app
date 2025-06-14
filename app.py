@@ -3,7 +3,8 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+@app.route("/home")
+def home():
     return "<h1>Chinese Pokedex</h1><small>Cheap ass pokedex from the ghetto.</small>"
 
 @app.route("/about")
