@@ -6,11 +6,11 @@ app = Flask(__name__)
 pokemon_data = [
     {
         "name": "bulbasaur",
-        "abilities": ['overgrow', 'chloropyll']
+        "abilities": 'overgrow, chloropyll'
     },
     {
         'name': 'pikachu',
-        'abilities': ['static', 'lightning-rod']
+        'abilities': 'static, lightning-rod'
     }
 ]
 
