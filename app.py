@@ -3,10 +3,21 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+pokemon_data = [
+    {
+        "name": "bulbasaur",
+        "abilities": ['overgrow', 'chloropyll']
+    },
+    {
+        'name': 'pikachu',
+        'abilities': ['static', 'lightning-rod']
+    }
+]
+
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('home.html', pokemon_data = pokemon_data)
 
 @app.route("/about")
 def about():

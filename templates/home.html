@@ -6,7 +6,11 @@
     <title>Chipok - Home</title>
 </head>
 <body>
-    <h1>Chipok</h1>x
-    <small>A chinese pokede</small>
+    <h1>Chipok - Home</h1>
+    <small>A chinese pokedex</small>
+    {% for pokemon in pokemon_data %}
+    <h2>Pokemon name: {{ pokemon.name }}</h2>
+    <p>Pokemon Abilties: {{ pokemon.abilities }}</p>
+    {% endfor %}
 </body>
 </html>
