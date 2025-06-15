@@ -1,0 +1,16 @@
+/* :root {
+    --navbar-bg: rgb(132, 154, 186);
+} */
+.navbar {
+    /* outline: 1px solid red; */
+    padding-left: 10%;
+    padding-right: 10%;
+    /* background: var(--navbar-bg) !important; */
+    margin-bottom: 20px;
+}
+/* main {
+    outline: 1px solid blue; 
+}*/
+.card {
+    margin: 10px;
+}

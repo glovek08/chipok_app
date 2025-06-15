@@ -1,9 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Chipok - Home</h1>
-    <small>A chinese pokedex</small>
-    {% for pokemon in pokemon_data %}
+<h1>Chipok - Home</h1>
+<small>A chinese pokedex</small>
+<!-- {% for pokemon in pokemon_data %}
     <h2>Pokemon name: {{ pokemon.name }}</h2>
     <p>Pokemon Abilties: {{ pokemon.abilities }}</p>
-    {% endfor %}
+    {% endfor %} -->
+
+
+<div class="container text-center">
+    <div class="row">
+        {% for pokemon in pokemon_data %}
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">{{ pokemon.name }}</h4>
+                <h5 class="card-title text-start">Abilties:</h5>
+                <p class="card-text text-start">{{ pokemon.abilities }}</p>
+                <a href="#" class="btn btn-secondary">Go somewhere</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}
