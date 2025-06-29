@@ -10,9 +10,7 @@ def get_pokemon_data():
     pokemon_list = []
     # Generate 20 random pokemons (in series).
     # We'll leave 700 as the maximum pokemon entry till i figure out how to get a count of pokemon entires.
-    poke_rand = random.randint(1, 700)
-    if poke_rand < 19:
-        poke_rand = 20
+    poke_rand = random.randint(20, 700)
     pokemon_ids = list(range((poke_rand - 20), poke_rand))
 
     for pokemon_id in pokemon_ids:
@@ -32,28 +30,6 @@ def get_pokemon_data():
                     "abilities": ", ".join(abilities),
                     "types": ", ".join(types),
                     "sprite": data["sprites"]["front_default"],
-                    "stats": {
-                        "hp": next(
-                            stat["base_stat"]
-                            for stat in data["stats"]
-                            if stat["stat"]["name"] == "hp"
-                        ),
-                        "attack": next(
-                            stat["base_stat"]
-                            for stat in data["stats"]
-                            if stat["stat"]["name"] == "attack"
-                        ),
-                        "defense": next(
-                            stat["base_stat"]
-                            for stat in data["stats"]
-                            if stat["stat"]["name"] == "defense"
-                        ),
-                        "speed": next(
-                            stat["base_stat"]
-                            for stat in data["stats"]
-                            if stat["stat"]["name"] == "speed"
-                        ),
-                    },
                 }
                 pokemon_list.append(pokemon_info)
         except Exception as e:
