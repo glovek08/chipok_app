@@ -2,22 +2,26 @@
 {% block content %}
 <h1>Chipok - Home</h1>
 <small>A chinese pokedex</small>
-<!-- {% for pokemon in pokemon_data %}
-    <h2>Pokemon name: {{ pokemon.name }}</h2>
-    <p>Pokemon Abilties: {{ pokemon.abilities }}</p>
-    {% endfor %} -->
 
-
-<div class="container text-center">
+<div class="container">
     <div class="row">
         {% for pokemon in pokemon_data %}
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">{{ pokemon.name }}</h4>
-                <h5 class="card-title text-start">Abilties:</h5>
-                <p class="card-text text-start">{{ pokemon.abilities }}</p>
-                <a href="#" class="btn btn-secondary">Go somewhere</a>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card pokemon-card h-100">
+                <div class="card-header text-center bg-primary text-white">
+                    <h5 class="card-title mb-0">{{ pokemon.name }}</h5>
+                </div>
+                {% if pokemon.sprite %}
+                <img src="{{ pokemon.sprite }}" class="card-img-top pokemon-sprite" alt="{{ pokemon.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <div class="pokemon-info">
+                        <p class="card-text"><strong>Type:</strong> <span class="badge bg-secondary">{{ pokemon.types }}</span></p>
+                        <p class="card-text"><strong>Height:</strong> {{ pokemon.height / 10 }} m</p>
+                        <p class="card-text"><strong>Weight:</strong> {{ pokemon.weight / 10 }} kg</p>
+                        <p class="card-text"><strong>Abilities:</strong> {{ pokemon.abilities }}</p>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
